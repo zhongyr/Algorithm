@@ -1,13 +1,24 @@
 // partition.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
+// 
+/**
+*  This program shows how many partitions can a integer have.
+*/
 #include "pch.h"
 #include <iostream>
 #include <stdio.h>
-
+int q(int m, int n);
 int main()
 {
-    std::cout << "Hello World!\n"; 
+	int n;
+	scanf_s("%d", &n);
+	printf("%d", q(n, n));
+}
+int q(int n, int m) {
+	if (n < 1 || m < 1) return 0;
+	if (n == 1 || m == 1) return 1;
+	if (n < m) return q(n, n);
+	if (n == m) return q(n, m - 1) + 1;
+	return q(n, m - 1) + q(n - m, m);
 }
 
 
