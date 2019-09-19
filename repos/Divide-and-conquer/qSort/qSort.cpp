@@ -9,7 +9,7 @@ void swap(int* a, int i, int j);
 
 int main()
 {
-    std::cout << "Hello World!\n"; 
+ 
 }
 
 void qSort(int* a, int p, int r) {
